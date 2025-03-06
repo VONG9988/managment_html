@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubble</title>
+    <link rel="stylesheet" href="buble.css" />
+  </head>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgb(0, 0, 0);
+      font-family: "Times New Roman", serif;
+    }
+
+    .bubble-container {
+      display: flex;
+      gap: 2rem;
+      padding: 2rem;
+      margin-top: 200px;
+    }
+
+    .bubble {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-image: url("./bubble.png");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      font-size: 48px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+        -1px -1px 1px rgba(255, 255, 255, 0.5);
+      position: relative;
+      filter: brightness(1.1) contrast(1.1);
+    }
+
+    /* Static positioning for visual interest */
+    .bubble:nth-child(even) {
+      transform: translateY(20px);
+    }
+    .bubble:nth-child(odd) {
+      transform: translateY(-20px);
+    }
+    hr {
+      width: 100%;
+      background-color: #ffff;
+    }
+    .copyright {
+      color: white;
+      font-size: 24px;
+      font-family: "Times New Roman", serif;
+      text-align: center;
+    }
+
+    /* Enhanced string effect */
+    .bubble::before {
+      content: "";
+      position: absolute;
+      width: 0px;
+      height: 200vh;
+      border: 1px solid #ffff;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0.6) 10%,
+        rgba(255, 255, 255, 0.4) 20%,
+        rgba(255, 255, 255, 0.2) 30%,
+        rgba(255, 255, 255, 0.1) 40%,
+        transparent 100%
+      );
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    }
+    /* Additional highlight for string */
+    .bubble::after {
+      content: "";
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      bottom: calc(100% + 200vh);
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+  </style>
+  <body>
+    <div class="bubble-container">
+      <div class="bubble">H</div>
+      <div class="bubble">E</div>
+      <div class="bubble">L</div>
+      <div class="bubble">L</div>
+      <div class="bubble">O</div>
+      <div class="bubble">W</div>
+      <div class="bubble">O</div>
+      <div class="bubble">R</div>
+      <div class="bubble">L</div>
+      <div class="bubble">D</div>
+    </div>
+    <hr />
+    <footer>
+      <div class="copyright">Copyright &copy; Hong Bunleab 2025.</div>
+    </footer>
+  </body>
+</html>
